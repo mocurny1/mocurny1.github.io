@@ -1,0 +1,291 @@
+Here is a clean, modern, single-page portfolio template that requires no external dependencies or JavaScript frameworks. It uses standard, responsive CSS layout techniques (Flexbox and CSS Grid) and is ready to paste directly into your `index.html` file on GitHub Pages.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molly Curnyn</title>
+    <style>
+        /* --- CSS VARIABLES & BASE STYLES --- */
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0284c7;
+            --border: #334155;
+            --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        /* --- HEADER / HERO SECTION --- */
+        header {
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        header .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* --- SKILLS CHIPS --- */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        /* --- PROJECTS GRID --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .tech-mini {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-family: monospace;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER / HERO -->
+        <header>
+            <h1>Molly Curnyn</h1>
+            <p class="subtitle">Your Major</p>
+            <p style="color: var(--text-secondary); margin-bottom: 1.2rem;">
+                Passionate about software development, algorithms, and web technologies. Currently learning Python, Java, and web design fundamentals.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/your-username" target="_blank" class="btn">GitHub Profile</a>
+                <a href="https://linkedin.com/in/your-profile" target="_blank" class="btn">LinkedIn</a>
+                <a href="mailto:your-email@example.com" class="btn">Email Me</a>
+            </div>
+        </header>
+
+        <!-- TECHNICAL SKILLS -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">HTML5 / CSS3</span>
+                <span class="skill-tag">Git &amp; GitHub</span>
+                <span class="skill-tag">Linux Basics</span>
+                <span class="skill-tag">VS Code</span>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div>
+                        <h3 class="project-title">Grade Calculator &amp; Tracker</h3>
+                        <p class="project-desc">
+                            A CLI application built in Python to calculate term GPA, track course weightings, and export summary reports to a text file.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-mini">Python</span>
+                            <span class="tech-mini">File I/O</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/your-username/repo-name" target="_blank">Source Code &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div>
+                        <h3 class="project-title">Personal Portfolio Website</h3>
+                        <p class="project-desc">
+                            A responsive single-page portfolio built from scratch with pure HTML5 and CSS3, hosted using GitHub Pages.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-mini">HTML5</span>
+                            <span class="tech-mini">CSS Grid/Flexbox</span>
+                            <span class="tech-mini">GitHub Pages</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/your-username/repo-name" target="_blank">Source Code &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EDUCATION / COURSEWORK -->
+        <section id="education">
+            <h2>Education &amp; Relevant Coursework</h2>
+            <div style="background-color: var(--card-bg); border: 1px solid var(--border); padding: 1.2rem; border-radius: 8px;">
+                <h3 style="font-size: 1.1rem; color: var(--text-primary);">B.S. in Computer Science</h3>
+                <p style="color: var(--accent); font-size: 0.9rem; margin-bottom: 0.5rem;">University Name &bull; Expected Graduation: 2029</p>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                    <strong>Relevant Coursework:</strong> Intro to Computer Science (Python), Data Structures Foundations, Calculus I, Discrete Mathematics.
+                </p>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2026 Alex Chen. Built with HTML &amp; CSS, hosted on GitHub Pages.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+
+```
+
+### Key Features of This Template
+
+* **Responsive Layout:** Automatically switches from a two-column grid on desktop to a single column on mobile screens.
+* **Modern CSS Styling:** Uses a dark palette with standard system UI fonts, clean code tags for skills, and hover transitions on project cards.
+* **No Dependencies:** Pure HTML/CSS with zero external Javascript or framework calls, allowing fast load times on GitHub Pages.
+* **Easy Customization:** All primary color variables (`--bg-color`, `--accent`, `--card-bg`) sit at the top of the CSS file for instant color scheme updates.
